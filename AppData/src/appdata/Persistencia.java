@@ -13,7 +13,7 @@ import java.util.LinkedList;
 
 /**
  *
- * @author marisol molina rosal
+ * @author ariel espinoza molina
  */
 public class Persistencia {
     DataBase DB = null;
