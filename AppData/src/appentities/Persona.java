@@ -8,7 +8,7 @@ package appentities;
 
 /**
  *
- * @author marisol molina rosal
+ * @author ariel espinoza molina
  */
 public class Persona {
     private String Cedula;
