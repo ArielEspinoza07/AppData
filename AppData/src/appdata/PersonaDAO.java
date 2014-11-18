@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author marisol molina rosal
+ * @author ariel espinoza molina
  */
 public class PersonaDAO {
     private static Persistencia pr = new Persistencia();
