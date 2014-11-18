@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author marisol molina rosal
+ * @author ariel espinoza molina
  */
 public class Hilo implements Runnable{
     
