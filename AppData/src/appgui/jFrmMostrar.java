@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author marisol molina rosal
+ * @author ariel espinoza molina
  */
 public class jFrmMostrar extends javax.swing.JFrame {
 
