@@ -20,6 +20,11 @@ import javax.swing.JOptionPane;
 public class DataBase {
     
     private Connection conn;
+    private String driver;
+    private String server;
+    private String database;
+    private String user;
+    private String pass;
     
     public DataBase() {
     }
@@ -30,14 +35,33 @@ public class DataBase {
     
     public void conectarSqlServer(){
         try{
-            String info = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            String connecturl = "jdbc:sqlserver://127.0.0.1:1433;"+"databaseName=Test;user=sa;password=souleater07;";
+            driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+            server = "jdbc:sqlserver://127.0.0.1:1433;";
+            database = "databaseName=Test;";
+            user = "user=sa;";
+            pass = "password=souleater07;";
             
-            Class.forName(info);
-            this.conn = DriverManager.getConnection(connecturl);
+            Class.forName(driver);
+            this.conn = DriverManager.getConnection(server+database+user+pass);
             
         }catch(Exception e){
             e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void conectarMySQL(){
+        try{
+            driver = "com.mysql.jdbc.Driver";
+            server = "jdbc:mysql://localhost:3306/";
+            database = "ejemplousuarios";
+            user = "root";
+            pass = "";
+            
+            Class.forName(driver);
+            this.conn = DriverManager.getConnection(server+database,user,pass);
+        
+        }catch(Exception e){
             System.out.println(e.getMessage());
         }
     }
