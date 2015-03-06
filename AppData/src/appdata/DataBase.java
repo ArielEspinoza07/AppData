@@ -39,7 +39,7 @@ public class DataBase {
             server = "jdbc:sqlserver://127.0.0.1:1433;";
             database = "databaseName=Test;";
             user = "user=sa;";
-            pass = "password=souleater07;";
+            pass = "password=12345;";
             
             Class.forName(driver);
             this.conn = DriverManager.getConnection(server+database+user+pass);
@@ -54,7 +54,7 @@ public class DataBase {
         try{
             driver = "com.mysql.jdbc.Driver";
             server = "jdbc:mysql://localhost:3306/";
-            database = "ejemplousuarios";
+            database = "Test";
             user = "root";
             pass = "";
             
@@ -81,8 +81,17 @@ public class DataBase {
     public int execute(String Sql){
         Statement Stmt;
         try{
+            //call this method if are using MS SQL Server
+            //conectarSqlServer();
+            
+            //or this if you are using MySql
+            //conectarMySQL;
+            
             Stmt = this.conn.createStatement();
             Stmt.executeUpdate(Sql);
+            
+            cerrarConexion();
+            
             return 1;
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -95,8 +104,18 @@ public class DataBase {
         ResultSet Rs;
         Statement Stmt;
         try{
+            
+            //call this method if are using MS SQL Server
+            //conectarSqlServer();
+            
+            //or this if you are using MySql
+            //conectarMySQL;
+            
             Stmt = this.conn.createStatement();
             Rs = Stmt.executeQuery(Sql);
+            
+            cerrarConexion();
+            
             return Rs;
         }catch(Exception e){
             System.out.println(e.getMessage());
